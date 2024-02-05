@@ -94,7 +94,7 @@ min_loss = float('inf')
 
 best_pred = None
 best_target = None
-num_epochs = 200
+num_epochs = 400
 
 for epoch in tqdm(range(num_epochs)):
     for batch_idx, (data, target) in enumerate(train_loader):
