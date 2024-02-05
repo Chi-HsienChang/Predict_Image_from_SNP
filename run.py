@@ -94,7 +94,7 @@ min_loss = float('inf')
 
 best_pred = None
 best_target = None
-num_epochs = 400
+num_epochs = 500
 
 for epoch in tqdm(range(num_epochs)):
     for batch_idx, (data, target) in enumerate(train_loader):
@@ -136,16 +136,16 @@ for i in range(len(test_generated_images)):
     plt.figure()
 
     plt.subplot(1, 2, 1)
-    plt.title(f'Predict {i}')
+    plt.title(f'Predict {i+1}')
     plt.imshow(test_generated_images[i].squeeze(), cmap='gray')
     plt.axis('off')
     
     plt.subplot(1, 2, 2)
-    plt.title(f'Target {i}')
+    plt.title(f'Target {i+1}')
     plt.imshow(test_output_tensor[i].squeeze(), cmap='gray')
     plt.axis('off')
     
-    plt.savefig(f'Predict_Target_{i}.JPG', bbox_inches='tight', pad_inches=0)
+    plt.savefig(f'Predict_Target_{i+1}.png', bbox_inches='tight', pad_inches=0)
     plt.close()
 
 print("Completed.")
